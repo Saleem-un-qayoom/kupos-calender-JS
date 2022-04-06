@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+.container {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.delfos-calender-input {
+	display: inline-block;
+	border: 1px solid #999;
+	height: 40px;
+	width: 100px;
+	border-radius: 5px;
+	cursor: pointer;
+	position: relative;
+}
+
+.delfos-calender {
+	position: absolute;
+	top: 40px;
+	left: -80%;
+	display: none;
+	width: 260px;
+	box-shadow: 1px 1px 16px 0px rgb(0 0 0 / 8%);
+	padding: 20px;
+	border-radius: 15px;
+	cursor: default;
+}
+
+.month-row {
+	display: flex;
+	justify-content: space-between;
+	background-color: #ff8f45;
+	padding: 8px;
+	border-radius: 10px;
+	color: #fff;
+}
+
+.week-column {
+	color: #ff8f45;
+	padding: 8px 0;
+	display: flex;
+}
+
+.week-column div {
+	width: calc(100% / 7);
+	display: flex;
+	justify-content: center;
+}
+
+.date-column {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.date-column div {
+	width: calc(100% / 7);
+	padding: 5px 0;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.disable-button {
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: default;
+}
