@@ -53,6 +53,7 @@ const renderCalender = currentMonth => {
 			// } else {
 			// 	days += `<div>${i}</div>`;
 			// }
+			//
 
 			if (d.getMonth() + currentMonth < d.getMonth()) {
 				days += `<div class="disable-button">${i}</div>`;
