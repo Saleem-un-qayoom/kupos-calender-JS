@@ -14,9 +14,8 @@ const renderCalender = (currentMonth, currentYear, selectedDate) => {
 		'DEC',
 	];
 
-	const d = new Date();
-	document.querySelector('.month-row span').innerHTML =
-		month[currentMonth] + ` ${currentYear}`;
+	monthRowSpan.innerHTML = month[currentMonth] + ` ${currentYear}`;
+
 	let firstDateOfTheMonth = new Date(currentYear, currentMonth, 1).getDay();
 
 	if (firstDateOfTheMonth === 0) {
@@ -52,15 +51,15 @@ const renderCalender = (currentMonth, currentYear, selectedDate) => {
 								? 'selected-date'
 								: ''
 						}" 
-							
-							onclick="onDateSelect(${i})"
-							>${i}</div>`;
+						
+						onclick="onDateSelect(${i})"
+						>${i}</div>`;
 					}
 				}
 			} else {
 				days += `<div class="date-column-item"
-					onclick="onDateSelect(${i})"
-					>${i}</div>`;
+				onclick="onDateSelect(${i})"
+				>${i}</div>`;
 			}
 
 			i++;
@@ -69,12 +68,9 @@ const renderCalender = (currentMonth, currentYear, selectedDate) => {
 		}
 		k++;
 	}
-	// SHOWING DAYS ON THE CALENDER
-	document.querySelector('.date-column').innerHTML = days;
-	// SHOWING DATE ON THE INPUT
-	document.querySelector(
-		'.delfos-calender-input'
-	).innerHTML = `${selectedDate}/${selectedMonth}/${selectedYear}`;
+
+	dateColum.innerHTML = days;
+	calenderInput.innerHTML = `${selectedDate}/${selectedMonth}/${selectedYear}`;
 };
 
 const onDateSelect = date => {
@@ -84,12 +80,15 @@ const onDateSelect = date => {
 
 	renderCalender(currentMonth, currentYear, selectedDate);
 
-	document.querySelector(
-		'.delfos-calender-input'
-	).innerHTML = `${selectedDate}/${selectedMonth}/${selectedYear}`;
-
 	calender.classList.toggle('show-calender');
 };
+
+let calenderInput = document.querySelector('.delfos-calender-input');
+let calender = document.querySelector('.delfos-calender');
+let nextMonth = document.querySelector('.next-month');
+let prevMonth = document.querySelector('.prev-month');
+let monthRowSpan = document.querySelector('.month-row span');
+let dateColum = document.querySelector('.date-column');
 
 const d = new Date();
 
@@ -100,7 +99,11 @@ let selectedYear = d.getFullYear();
 let currentMonth = d.getMonth();
 let currentYear = d.getFullYear();
 
-document.querySelector('.prev-month').addEventListener('click', () => {
+calenderInput.addEventListener('click', () => {
+	calender.classList.toggle('show-calender');
+});
+
+prevMonth.addEventListener('click', () => {
 	if (currentMonth === 0) {
 		currentMonth = 11;
 		currentYear--;
@@ -110,7 +113,7 @@ document.querySelector('.prev-month').addEventListener('click', () => {
 	renderCalender(currentMonth, currentYear, selectedDate);
 });
 
-document.querySelector('.next-month').addEventListener('click', () => {
+nextMonth.addEventListener('click', () => {
 	if (currentMonth === 11) {
 		currentMonth = 0;
 		currentYear++;
@@ -120,4 +123,6 @@ document.querySelector('.next-month').addEventListener('click', () => {
 	renderCalender(currentMonth, currentYear, selectedDate);
 });
 
-renderCalender(currentMonth, currentYear, selectedDate);
+window.onload = function () {
+	renderCalender(currentMonth, currentYear, selectedDate);
+};
