@@ -59,6 +59,17 @@ body {
 	color: #fff;
 }
 
+.month-row .prev-month {
+	height: 20px;
+	cursor: pointer;
+	display: inline-block;
+}
+.month-row .next-month {
+	height: 20px;
+	cursor: pointer;
+	display: inline-block;
+}
+
 .week-column {
 	color: #ff8f45;
 	padding: 8px 0;
@@ -78,7 +89,7 @@ body {
 
 .date-column div {
 	width: calc(100% / 7);
-	padding: 5px 0;
+	padding: 6px 0;
 	display: flex;
 	justify-content: center;
 	cursor: pointer;
