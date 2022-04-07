@@ -3,38 +3,45 @@ let calender = document.querySelector('.delfos-calender');
 document
 	.querySelector('.delfos-calender-input')
 	.addEventListener('click', () => {
-		calender.setAttribute('style', 'display: inline-block !important;');
+		calender.classList.toggle('show-calender');
 	});
 
-let currentMonth = 0;
+const d = new Date();
 
-const renderCalender = currentMonth => {
+let selectedDate = d.getDate();
+let selectedMonth = d.getMonth();
+let selectedYear = d.getFullYear();
+
+let currentMonth = d.getMonth();
+let currentYear = d.getFullYear();
+const renderCalender = (currentMonth, currentYear, selectedDate) => {
 	const month = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December',
+		'JAN',
+		'FEB',
+		'MAR',
+		'APR',
+		'MAY',
+		'JUN',
+		'JUL',
+		'AUG',
+		'SEP',
+		'OCT',
+		'NOV',
+		'DEC',
 	];
 
 	const d = new Date();
 	document.querySelector('.month-row span').innerHTML =
-		month[d.getMonth() + currentMonth];
-	const firstDateOfTheMonth = new Date(
-		d.getFullYear(),
-		d.getMonth() + currentMonth,
-		1
-	).getDay();
+		month[currentMonth] + ` ${currentYear}`;
+	let firstDateOfTheMonth = new Date(currentYear, currentMonth, 1).getDay();
+
+	if (firstDateOfTheMonth === 0) {
+		firstDateOfTheMonth = 7;
+	}
+
 	const daysOfCurrentMOnth = new Date(
-		d.getFullYear(),
-		d.getMonth() + (currentMonth + 1),
+		currentYear,
+		currentMonth + 1,
 		0
 	).getDate();
 
@@ -46,33 +53,31 @@ const renderCalender = currentMonth => {
 	let k = 1;
 	while (i <= daysOfCurrentMOnth) {
 		if (firstDateOfTheMonth <= k) {
-			// if (d.getMonth() + currentMonth > d.getMonth()) {
-			// 	days += `<div class="disable-button">${i}</div>`;
-			// } else if (i >= todaysDate) {
-			// 	days += `<div class="disable-button">${i}</div>`;
-			// } else {
-			// 	days += `<div>${i}</div>`;
-			// }
-			//
-
-			if (d.getMonth() + currentMonth < d.getMonth()) {
-				days += `<div class="disable-button">${i}</div>`;
-			} else {
-				if (
-					d.getMonth() + currentMonth == d.getMonth() &&
-					i < todaysDate
-				) {
-					days += `<div class="disable-button">${i}</div>`;
+			if (currentYear < d.getFullYear()) {
+				days += `<div class="disable-button date-column-item" >${i}</div>`;
+			} else if (currentYear === d.getFullYear()) {
+				if (currentMonth < d.getMonth()) {
+					days += `<div class="disable-button date-column-item" >${i}</div>`;
 				} else {
-					days += `<div>${i}</div>`;
+					if (currentMonth == d.getMonth() && i < todaysDate) {
+						days += `<div class="disable-button date-column-item" >${i}</div>`;
+					} else {
+						days += `<div class="date-column-item ${
+							currentMonth == selectedMonth &&
+							i == selectedDate
+								? 'selected-date'
+								: ''
+						}" 
+						
+						onclick="onDateSelect(${i})"
+						>${i}</div>`;
+					}
 				}
+			} else {
+				days += `<div class="date-column-item"
+				onclick="onDateSelect(${i})"
+				>${i}</div>`;
 			}
-
-			// if (i >= todaysDate) {
-			// 	days += `<div>${i}</div>`;
-			// } else {
-			// 	days += `<div class="disable-button">${i}</div>`;
-			// }
 
 			i++;
 		} else {
@@ -84,14 +89,38 @@ const renderCalender = currentMonth => {
 	document.querySelector('.date-column').innerHTML = days;
 };
 
-renderCalender(currentMonth);
+renderCalender(currentMonth, currentYear, selectedDate);
+document.querySelector(
+	'.delfos-calender-input'
+).innerHTML = `${selectedDate}/${selectedMonth}/${selectedYear}`;
 
 document.querySelector('.prev-month').addEventListener('click', () => {
-	currentMonth--;
-	renderCalender(currentMonth);
+	if (currentMonth === 0) {
+		currentMonth = 11;
+		currentYear--;
+	} else {
+		currentMonth--;
+	}
+	renderCalender(currentMonth, currentYear, selectedDate);
 });
 
 document.querySelector('.next-month').addEventListener('click', () => {
-	currentMonth++;
-	renderCalender(currentMonth);
+	if (currentMonth === 11) {
+		currentMonth = 0;
+		currentYear++;
+	} else {
+		currentMonth++;
+	}
+	renderCalender(currentMonth, currentYear, selectedDate);
 });
+
+const onDateSelect = date => {
+	selectedDate = date;
+	selectedMonth = currentMonth;
+	selectedYear = currentYear;
+	renderCalender(currentMonth, currentYear, selectedDate);
+	document.querySelector(
+		'.delfos-calender-input'
+	).innerHTML = `${selectedDate}/${selectedMonth}/${selectedYear}`;
+	calender.classList.toggle('show-calender');
+};
