@@ -9,28 +9,33 @@
 		/>
 		<title>Document</title>
 		<link rel="stylesheet" href="/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<div class="container">
 			<div class="delfos">
-				<span class="delfos-calender-input"></span>
+				<span class="delfos-calender-input">
+					<div class="delfos-calender-value"></div>
+					<div class="delfos-clock-value"></div>
+				</span>
 				<div class="delfos-calender">
 					<div class="month-row">
-						<!-- <div class="prev-month"> -->
 						<img
 							class="prev-month"
 							src="./left-arrow.svg"
 							alt=""
 						/>
-						<!-- </div> -->
 						<span></span>
-						<!-- <div class="next-month"> -->
 						<img
 							class="next-month"
 							src="./right-arrow.svg"
 							alt=""
 						/>
-						<!-- </div> -->
 					</div>
 					<div class="week-column">
 						<div>M</div>
@@ -42,6 +47,76 @@
 						<div>S</div>
 					</div>
 					<div class="date-column"></div>
+				</div>
+				<div class="delfos-clock-1">
+					<div class="title">Hora de recogida</div>
+					<div class="date-picker">
+						<div class="hour-box">
+							<div class="increase-hour">
+								<img
+									class="up-down-arrow"
+									src="./up-arrow.svg"
+									alt=""
+								/>
+							</div>
+							<div class="hour-value"></div>
+							<div class="decrease-hour">
+								<img
+									class="up-down-arrow"
+									src="./down-arrow.svg"
+									alt=""
+								/>
+							</div>
+						</div>
+						<div class="minute-box">
+							<div class="increase-minute">
+								<img
+									class="up-down-arrow"
+									src="./up-arrow.svg"
+									alt=""
+								/>
+							</div>
+
+							<div class="minute-value"></div>
+							<div class="decrease-minute">
+								<img
+									class="up-down-arrow"
+									src="./down-arrow.svg"
+									alt=""
+								/>
+							</div>
+						</div>
+						<div class="am-pm-box">
+							<div class="change-am-pm-1">
+								<img
+									class="up-down-arrow"
+									src="./up-arrow.svg"
+									alt=""
+								/>
+							</div>
+
+							<div class="am-pm-value"></div>
+							<div class="change-am-pm-2">
+								<img
+									class="up-down-arrow"
+									src="./down-arrow.svg"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="delfos-clock-2">
+					<div class="hour-box">
+						<div class="title">Selecciona hora </div>
+						<div class="hour-list"></div>
+					</div>
+				</div>
+				<div class="delfos-clock-3">
+					<div class="minute-box">
+						<div class="title">Selecciona minutos </div>
+						<div class="minute-list"></div>
+					</div>
 				</div>
 			</div>
 		</div>

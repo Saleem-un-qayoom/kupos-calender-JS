@@ -8,6 +8,7 @@
 
 body {
 	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -23,18 +24,21 @@ body {
 
 .delfos-calender-input {
 	display: inline-block;
-	border: 1px solid #999;
+	border: 1px solid #ddd;
 	padding: 10px;
-	width: 100px;
-	border-radius: 5px;
+	width: 210px;
+	border-radius: 10px;
+	font-size: 12px;
 	cursor: pointer;
 	position: relative;
+	display: flex;
+	justify-content: space-between;
 }
 
 .delfos-calender {
 	position: absolute;
 	top: 40px;
-	left: -80%;
+	left: -12%;
 	display: none;
 	width: 260px;
 	box-shadow: 1px 1px 16px 0px rgb(0 0 0 / 8%);
@@ -53,6 +57,7 @@ body {
 .month-row {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	background-color: #ff8f45;
 	padding: 8px;
 	border-radius: 10px;
@@ -60,12 +65,12 @@ body {
 }
 
 .month-row .prev-month {
-	height: 20px;
+	height: 15px;
 	cursor: pointer;
 	display: inline-block;
 }
 .month-row .next-month {
-	height: 20px;
+	height: 15px;
 	cursor: pointer;
 	display: inline-block;
 }
@@ -89,10 +94,12 @@ body {
 
 .date-column div {
 	width: calc(100% / 7);
-	padding: 6px 0;
+	padding: 7px 0;
+	margin-top: 4px;
 	display: flex;
 	justify-content: center;
 	cursor: pointer;
+	font-size: 13px;
 }
 
 .disable-button {
@@ -102,7 +109,121 @@ body {
 }
 
 .selected-date {
-	background-color: #ff8f45;
-	color: #fff;
+	background-color: #fef1ec;
+	color: #ff8f45;
 	border-radius: 100%;
+}
+
+.delfos-clock-1 {
+	position: absolute;
+	top: 40px;
+	left: 8%;
+	display: none;
+
+	width: 180px;
+	box-shadow: 1px 1px 16px 0px rgb(0 0 0 / 8%);
+	padding: 20px;
+	border-radius: 15px;
+	cursor: default;
+}
+
+.delfos-clock-1 .title {
+	text-align: center;
+	background-color: #ff5c60;
+	font-size: 10pt;
+	color: #fff;
+	padding: 5px 0;
+	border-radius: 5px;
+}
+
+.delfos-clock-1 .date-picker {
+	display: flex;
+	justify-content: space-between;
+}
+.delfos-clock-1 .date-picker .hour-box,
+.delfos-clock-1 .date-picker .minute-box,
+.delfos-clock-1 .date-picker .am-pm-box {
+	width: 30%;
+}
+
+.delfos-clock-1 .date-picker .up-down-arrow {
+	height: 15px;
+}
+.delfos-clock-1 .hour-box,
+.delfos-clock-1 .minute-box,
+.delfos-clock-1 .am-pm-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.delfos-clock-1 .increase-hour,
+.delfos-clock-1 .decrease-hour,
+.delfos-clock-1 .increase-minute,
+.delfos-clock-1 .decrease-minute,
+.delfos-clock-1 .change-am-pm-1,
+.delfos-clock-1 .change-am-pm-2 {
+	cursor: pointer;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 0;
+}
+
+.delfos-clock-1 .hour-value,
+.delfos-clock-1 .minute-value,
+.delfos-clock-1 .am-pm-value {
+	border: 1px solid #ccc;
+	width: 100%;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 10px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.delfos-clock-2,
+.delfos-clock-3 {
+	position: absolute;
+	top: 40px;
+	left: -13%;
+	display: none;
+	width: 260px;
+	box-shadow: 1px 1px 16px 0px rgb(0 0 0 / 8%);
+	padding: 20px;
+	border-radius: 15px;
+	cursor: default;
+}
+
+/* .delfos-clock-2 .hour-box,
+.delfos-clock-2 .minute-box {
+	display: none;
+} */
+
+.delfos-clock-2 .title,
+.delfos-clock-3 .title {
+	text-align: center;
+	background-color: #ff5c60;
+	font-size: 10pt;
+	color: #fff;
+	padding: 5px 0;
+	border-radius: 5px;
+}
+
+.delfos-clock-2 .hour-list,
+.delfos-clock-3 .minute-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.delfos-clock-2 .hour-list .hour-item,
+.delfos-clock-3 .minute-list .minute-item {
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	margin-top: 8px;
+	font-size: 13px;
+	cursor: pointer;
 }
