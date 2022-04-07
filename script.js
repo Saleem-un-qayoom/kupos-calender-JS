@@ -201,6 +201,9 @@ calenderInput.addEventListener('click', () => {
 	if (clockSecond.classList.contains('show-calender')) {
 		clockSecond.classList.toggle('show-calender');
 	}
+	if (clockOne.classList.contains('show-calender')) {
+		clockOne.classList.toggle('show-calender');
+	}
 
 	calender.classList.toggle('show-calender');
 });
