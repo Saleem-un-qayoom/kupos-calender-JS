@@ -147,9 +147,19 @@ const onDateSelect = date => {
 	selectedYear = currentYear;
 
 	renderCalender(currentMonth, currentYear, selectedDate);
+	renderClock1();
+	renderClock2();
+	renderClock3();
 
 	calender.classList.toggle('show-calender');
 	clockOne.classList.toggle('show-calender');
+};
+
+const renderNoOfPassengers = () => {
+	adultValue.innerHTML = noOfAdults;
+	kidValue.innerHTML = noOfKids;
+	babyValue.innerHTML = noOfBaby;
+	totalNoOfPassengers.innerHTML = noOfAdults + noOfKids;
 };
 
 let calenderInput = document.querySelector('.delfos-calender-value');
@@ -203,6 +213,9 @@ calenderInput.addEventListener('click', () => {
 	}
 	if (clockOne.classList.contains('show-calender')) {
 		clockOne.classList.toggle('show-calender');
+	}
+	if (selectPassengerBox.classList.contains('show-calender')) {
+		selectPassengerBox.classList.toggle('show-calender');
 	}
 
 	calender.classList.toggle('show-calender');
@@ -310,12 +323,96 @@ clockValue.addEventListener('click', () => {
 	if (clockThird.classList.contains('show-calender')) {
 		clockThird.classList.toggle('show-calender');
 	}
+	if (selectPassengerBox.classList.contains('show-calender')) {
+		selectPassengerBox.classList.toggle('show-calender');
+	}
 	clockSecond.classList.toggle('show-calender');
+});
+
+const selectPassengerInput = document.querySelector('.select-passengers-input');
+const selectPassengerBox = document.querySelector('.select-passengers-box');
+
+selectPassengerInput.addEventListener('click', () => {
+	if (clockOne.classList.contains('show-calender')) {
+		clockOne.classList.toggle('show-calender');
+	}
+	if (calender.classList.contains('show-calender')) {
+		calender.classList.toggle('show-calender');
+	}
+	if (clockThird.classList.contains('show-calender')) {
+		clockThird.classList.toggle('show-calender');
+	}
+	if (clockSecond.classList.contains('show-calender')) {
+		clockSecond.classList.toggle('show-calender');
+	}
+	selectPassengerBox.classList.toggle('show-calender');
+});
+
+let adultValue = document.querySelector('.adult-value');
+let kidValue = document.querySelector('.kid-value');
+let babyValue = document.querySelector('.baby-value');
+
+let totalNoOfPassengers = document.querySelector('.select-passenger-value');
+
+let increaseAdult = document.querySelector('.increase-adult');
+let decreaseAdult = document.querySelector('.decrease-adult');
+
+let increaseKid = document.querySelector('.increase-kid');
+let decreaseKid = document.querySelector('.decrease-kid');
+
+let increaseBaby = document.querySelector('.increase-baby');
+let decreaseBaby = document.querySelector('.decrease-baby');
+
+let noOfAdults = 1;
+let noOfKids = 0;
+let noOfBaby = 0;
+
+increaseAdult.addEventListener('click', () => {
+	if (noOfAdults !== 10) {
+		noOfAdults++;
+		renderNoOfPassengers();
+	}
+});
+
+decreaseAdult.addEventListener('click', () => {
+	if (noOfAdults !== 1) {
+		noOfAdults--;
+		renderNoOfPassengers();
+	}
+});
+
+increaseKid.addEventListener('click', () => {
+	if (noOfKids !== 10) {
+		noOfKids++;
+		renderNoOfPassengers();
+	}
+});
+
+decreaseKid.addEventListener('click', () => {
+	if (noOfKids !== 0) {
+		noOfKids--;
+		renderNoOfPassengers();
+	}
+});
+
+increaseBaby.addEventListener('click', () => {
+	if (noOfBaby !== 7) {
+		noOfBaby++;
+		renderNoOfPassengers();
+	}
+});
+
+decreaseBaby.addEventListener('click', () => {
+	if (noOfBaby !== 0) {
+		noOfBaby--;
+		renderNoOfPassengers();
+	}
 });
 
 window.onload = function () {
 	renderCalender(currentMonth, currentYear, selectedDate);
-	renderClock1();
-	renderClock2();
-	renderClock3();
+	// renderClock1();
+	// renderClock2();
+	// renderClock3();
+	renderNoOfPassengers();
 };

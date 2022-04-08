@@ -26,6 +26,7 @@ body {
 	display: inline-block;
 	border: 1px solid #ddd;
 	padding: 10px;
+	height: 45px;
 	width: 210px;
 	border-radius: 10px;
 	font-size: 12px;
@@ -33,11 +34,12 @@ body {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .delfos-calender {
 	position: absolute;
-	top: 40px;
+	top: 48px;
 	left: -12%;
 	display: none;
 	width: 260px;
@@ -51,7 +53,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
+	position: relative;
 }
 
 .month-row {
@@ -116,10 +118,9 @@ body {
 
 .delfos-clock-1 {
 	position: absolute;
-	top: 40px;
+	top: 48px;
 	left: 8%;
 	display: none;
-
 	width: 180px;
 	box-shadow: 1px 1px 16px 0px rgb(0 0 0 / 8%);
 	padding: 20px;
@@ -187,7 +188,7 @@ body {
 .delfos-clock-2,
 .delfos-clock-3 {
 	position: absolute;
-	top: 40px;
+	top: 48px;
 	left: -13%;
 	display: none;
 	width: 260px;
@@ -226,4 +227,113 @@ body {
 	margin-top: 8px;
 	font-size: 13px;
 	cursor: pointer;
+}
+
+/* SELECT PASSENGER */
+.select-passengers {
+	display: inline-block;
+	border: 1px solid #ddd;
+	padding: 10px;
+	height: 45px;
+	width: 100px;
+	border-radius: 10px;
+	font-size: 12px;
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.select-passengers-input {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.select-passengers-input .user-img {
+	width: 25px;
+}
+
+.select-passengers-input .down-arrow {
+	margin-top: 7px;
+	width: 16px;
+}
+.select-passenger-value {
+	font-size: 14px;
+}
+
+.select-passengers-box {
+	position: absolute;
+	top: 48px;
+	display: none;
+	left: 0;
+	width: 260px;
+	box-shadow: 1px 1px 16px 0px rgb(0 0 0 / 8%);
+	padding: 10px 8px;
+	border-radius: 15px;
+	cursor: default;
+}
+
+.select-passengers-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 0;
+}
+
+.select-passengers-row:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+}
+
+.select-passengers-row-left {
+	display: flex;
+}
+
+.select-passengers-row-left img {
+	width: 30px;
+}
+.select-passengers-row-right {
+	padding-right: 8px;
+}
+.select-passengers-row-right .increase-button,
+.select-passengers-row-right .decrease-button {
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	border: 1px solid #999;
+	border-radius: 100px;
+	padding: 1px 7px;
+	color: #999;
+}
+
+.select-passengers-row-right .adult-value,
+.select-passengers-row-right .kid-value,
+.select-passengers-row-right .baby-value {
+	/* padding: 3px 5px; */
+	padding: 3px 0;
+	font-size: 14px;
+	width: 25px;
+	display: inline-block;
+	text-align: center;
+}
+
+.select-passengers-row-right .decrease-button {
+	padding: 1px 9px;
+}
+
+.select-passengers-row-left-text-1 {
+	font-size: 12px;
+}
+
+.select-passengers-row-left-text-2 {
+	font-size: 11px;
+	color: #999;
+}
+
+.unselectable {
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
