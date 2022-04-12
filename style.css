@@ -18,11 +18,11 @@ body {
 	align-items: center;
 }
 
-.show-calender {
+.show-calender-r {
 	display: inline-block !important;
 }
 
-.delfos-calender-input {
+.delfos-calender-input-r {
 	display: inline-block;
 	border: 1px solid #ddd;
 	padding: 10px;
@@ -37,7 +37,7 @@ body {
 	align-items: center;
 }
 
-.delfos-calender {
+.delfos-calender-r {
 	position: absolute;
 	top: 48px;
 	left: -12%;
@@ -49,14 +49,14 @@ body {
 	cursor: default;
 }
 
-.delfos {
+.delfos-r {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	position: relative;
 }
 
-.month-row {
+.month-row-r {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -66,35 +66,35 @@ body {
 	color: #fff;
 }
 
-.month-row .prev-month {
+.month-row-r .prev-month-r {
 	height: 15px;
 	cursor: pointer;
 	display: inline-block;
 }
-.month-row .next-month {
+.month-row-r .next-month-r {
 	height: 15px;
 	cursor: pointer;
 	display: inline-block;
 }
 
-.week-column {
+.week-column-r {
 	color: #ff8f45;
 	padding: 8px 0;
 	display: flex;
 }
 
-.week-column div {
+.week-column-r div {
 	width: calc(100% / 7);
 	display: flex;
 	justify-content: center;
 }
 
-.date-column {
+.date-column-r {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.date-column div {
+.date-column-r div {
 	width: calc(100% / 7);
 	padding: 7px 0;
 	margin-top: 4px;
@@ -104,19 +104,19 @@ body {
 	font-size: 13px;
 }
 
-.disable-button {
+.disable-button-r {
 	opacity: 0.5;
 	pointer-events: none;
 	cursor: default;
 }
 
-.selected-date {
+.selected-date-r {
 	background-color: #fef1ec;
 	color: #ff8f45;
 	border-radius: 100%;
 }
 
-.delfos-clock-1 {
+.delfos-clock-1-r {
 	position: absolute;
 	top: 48px;
 	left: 8%;
@@ -128,7 +128,7 @@ body {
 	cursor: default;
 }
 
-.delfos-clock-1 .title {
+.delfos-clock-1-r .title-r {
 	text-align: center;
 	background-color: #ff5c60;
 	font-size: 10pt;
@@ -137,34 +137,34 @@ body {
 	border-radius: 5px;
 }
 
-.delfos-clock-1 .date-picker {
+.delfos-clock-1-r .date-picker-r {
 	display: flex;
 	justify-content: space-between;
 }
-.delfos-clock-1 .date-picker .hour-box,
-.delfos-clock-1 .date-picker .minute-box,
-.delfos-clock-1 .date-picker .am-pm-box {
+.delfos-clock-1-r .date-picker-r .hour-box-r,
+.delfos-clock-1-r .date-picker-r .minute-box-r,
+.delfos-clock-1-r .date-picker-r .am-pm-box-r {
 	width: 30%;
 }
 
-.delfos-clock-1 .date-picker .up-down-arrow {
+.delfos-clock-1-r .date-picker-r .up-down-arrow-r {
 	height: 15px;
 }
-.delfos-clock-1 .hour-box,
-.delfos-clock-1 .minute-box,
-.delfos-clock-1 .am-pm-box {
+.delfos-clock-1-r .hour-box-r,
+.delfos-clock-1-r .minute-box-r,
+.delfos-clock-1-r .am-pm-box {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.delfos-clock-1 .increase-hour,
-.delfos-clock-1 .decrease-hour,
-.delfos-clock-1 .increase-minute,
-.delfos-clock-1 .decrease-minute,
-.delfos-clock-1 .change-am-pm-1,
-.delfos-clock-1 .change-am-pm-2 {
+.delfos-clock-1-r .increase-hour-r,
+.delfos-clock-1-r .decrease-hour-r,
+.delfos-clock-1-r .increase-minute-r,
+.delfos-clock-1-r .decrease-minute-r,
+.delfos-clock-1-r .change-am-pm-1-r,
+.delfos-clock-1-r .change-am-pm-2-r {
 	cursor: pointer;
 	width: 100%;
 	display: flex;
@@ -173,9 +173,9 @@ body {
 	padding: 5px 0;
 }
 
-.delfos-clock-1 .hour-value,
-.delfos-clock-1 .minute-value,
-.delfos-clock-1 .am-pm-value {
+.delfos-clock-1-r .hour-value-r,
+.delfos-clock-1-r .minute-value-r,
+.delfos-clock-1-r .am-pm-value-r {
 	border: 1px solid #ccc;
 	width: 100%;
 	border-radius: 5px;
@@ -185,8 +185,8 @@ body {
 	justify-content: center;
 }
 
-.delfos-clock-2,
-.delfos-clock-3 {
+.delfos-clock-2-r,
+.delfos-clock-3-r {
 	position: absolute;
 	top: 48px;
 	left: -13%;
@@ -203,8 +203,8 @@ body {
 	display: none;
 } */
 
-.delfos-clock-2 .title,
-.delfos-clock-3 .title {
+.delfos-clock-2-r .title-r,
+.delfos-clock-3-r .title-r {
 	text-align: center;
 	background-color: #ff5c60;
 	font-size: 10pt;
@@ -213,14 +213,14 @@ body {
 	border-radius: 5px;
 }
 
-.delfos-clock-2 .hour-list,
-.delfos-clock-3 .minute-list {
+.delfos-clock-2-r .hour-list-r,
+.delfos-clock-3-r .minute-list-r {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.delfos-clock-2 .hour-list .hour-item,
-.delfos-clock-3 .minute-list .minute-item {
+.delfos-clock-2-r .hour-list-r .hour-item-r,
+.delfos-clock-3-r .minute-list-r .minute-item-r {
 	width: 25%;
 	display: flex;
 	justify-content: center;
@@ -230,7 +230,7 @@ body {
 }
 
 /* SELECT PASSENGER */
-.select-passengers {
+.select-passengers-r {
 	display: inline-block;
 	border: 1px solid #ddd;
 	padding: 10px;
@@ -244,26 +244,26 @@ body {
 	justify-content: space-between;
 }
 
-.select-passengers-input {
+.select-passengers-input-r {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
 
-.select-passengers-input .user-img {
+.select-passengers-input-r .user-img-r {
 	width: 25px;
 }
 
-.select-passengers-input .down-arrow {
+.select-passengers-input-r .down-arrow-r {
 	margin-top: 7px;
 	width: 16px;
 }
-.select-passenger-value {
+.select-passenger-value-r {
 	font-size: 14px;
 }
 
-.select-passengers-box {
+.select-passengers-box-r {
 	position: absolute;
 	top: 48px;
 	display: none;
@@ -275,29 +275,29 @@ body {
 	cursor: default;
 }
 
-.select-passengers-row {
+.select-passengers-row-r {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 8px 0;
 }
 
-.select-passengers-row:not(:last-child) {
+.select-passengers-row-r:not(:last-child) {
 	border-bottom: 1px solid #ddd;
 }
 
-.select-passengers-row-left {
+.select-passengers-row-left-r {
 	display: flex;
 }
 
-.select-passengers-row-left img {
+.select-passengers-row-left-r img {
 	width: 30px;
 }
-.select-passengers-row-right {
+.select-passengers-row-right-r {
 	padding-right: 8px;
 }
-.select-passengers-row-right .increase-button,
-.select-passengers-row-right .decrease-button {
+.select-passengers-row-right-r .increase-button-r,
+.select-passengers-row-right-r .decrease-button-r {
 	cursor: pointer;
 	font-size: 18px;
 	font-weight: 500;
@@ -307,9 +307,9 @@ body {
 	color: #999;
 }
 
-.select-passengers-row-right .adult-value,
-.select-passengers-row-right .kid-value,
-.select-passengers-row-right .baby-value {
+.select-passengers-row-right-r .adult-value-r,
+.select-passengers-row-right-r .kid-value-r,
+.select-passengers-row-right-r .baby-value-r {
 	/* padding: 3px 5px; */
 	padding: 3px 0;
 	font-size: 14px;
@@ -318,20 +318,20 @@ body {
 	text-align: center;
 }
 
-.select-passengers-row-right .decrease-button {
+.select-passengers-row-right-r .decrease-button-r {
 	padding: 1px 9px;
 }
 
-.select-passengers-row-left-text-1 {
+.select-passengers-row-left-text-1-r {
 	font-size: 12px;
 }
 
-.select-passengers-row-left-text-2 {
+.select-passengers-row-left-text-2-r {
 	font-size: 11px;
 	color: #999;
 }
 
-.unselectable {
+.unselectable-r {
 	-webkit-user-select: none; /* Safari */
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
